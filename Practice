@@ -1,0 +1,18 @@
+name=input("What is your name? ")
+print(f"Hello, {name}! Let's collect your grades.")
+def get_grades(subjects):
+	grades = {}
+	for subj in subjects:
+		while True:
+			try:
+				val = input(f"What is your grade in {subj}? ")
+				grades[subj] = int(val)
+				break
+			except ValueError:
+				print("Please enter a valid integer grade.")
+	return grades
+
+if __name__ == "__main__":
+	subjects = ["math", "english", "science"]
+	grades = get_grades(subjects)
+	print("Collected grades:", grades)
