@@ -1,0 +1,37 @@
+inputstr = input("Enter the string name")
+
+vowels = {
+    "a": 0,
+    "e": 0,
+    "i": 0,
+    "o": 0,
+    "u": 0
+}
+for c in inputstr:
+    if c in vowels:
+        vowels[c] += 1
+print(vowels)
+
+# APPROACH 2
+inputstr = input("Enter the string - ")
+
+vowelsList = ["a", "e", "i", "o", "u"]
+vowels= {}
+
+for c in inputstr:
+    if c in vowelsList:
+        if c in vowels:
+            vowels[c] += 1
+        else:
+            vowels[c] = 1
+print(vowels)
+# Count the occerrences of each alphabet  in the input string entered by the user.
+inputstr= input("Enter the string: ")
+charCount = {}
+for c in inputstr:
+    if c.isalpha():
+        if c in charCount:
+            charCount[c] += 1
+        else:
+            charCount[c] = 1
+print (charCount)
