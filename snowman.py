@@ -1,8 +1,8 @@
 import pgzrun
 from random import randint
 
-WIDTH = 600
-HEIGHT = 400
+WIDTH = 400
+HEIGHT = 200
 
 score = 0
 gameOver = False
@@ -16,7 +16,7 @@ present.pos = 200, 200
 def draw():
     screen.blit("snow", (0, 0))
     snowman.draw()
-    snowman.draw()
+    present.draw()
 
     screen.draw.text("Score: " + str(score),
                      color="black",
@@ -29,8 +29,8 @@ def draw():
                          color="darkblue")
 
 def place_present():
-    present.x = randint(100, 400)
-    present.y = randint(100, 400)
+    present.x = randint(50, 350)
+    present.y = randint(50, 150)
 
 
 def timeUp():
