@@ -7,16 +7,16 @@ HEIGHT = 400
 score = 0
 gameOver = False
 
-ash = Actor("ash")
-ash.pos = 100, 100
-
 snowman = Actor("snowman")
-snowman.pos = 200, 200
+snowman.pos = 100, 100
+
+present = Actor("present")
+present.pos = 200, 200
 
 def draw():
-    screen.blit("thunder", (0, 0))
+    screen.blit("snow", (0, 0))
     snowman.draw()
-    ash.draw()
+    snowman.draw()
 
     screen.draw.text("Score: " + str(score),
                      color="black",
@@ -28,9 +28,9 @@ def draw():
                          fontsize=40,
                          color="darkblue")
 
-def place_snowman():
-    snowman.x = randint(100, 400)
-    snowman.y = randint(100, 400)
+def place_present():
+    present.x = randint(100, 400)
+    present.y = randint(100, 400)
 
 
 def timeUp():
@@ -44,17 +44,17 @@ def update():
         return
 
     if keyboard.left:
-        ash.x -= 3
+        snowman.x -= 3
     if keyboard.right:
-        ash.x += 3
+        snowman.x += 3
     if keyboard.up:
-        ash.y -= 3
+        snowman.y -= 3
     if keyboard.down:
-        ash.y += 3
+        snowman.y += 3
 
-    if ash.colliderect(snowman):
+    if snowman.colliderect(present):
         score += 10
-        place_snowman()
+        place_present()
 
 clock.schedule(timeUp, 30.0)
 pgzrun.go()
