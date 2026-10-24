@@ -1,8 +1,8 @@
 import pgzrun
 from random import randint
 
-WIDTH = 400
-HEIGHT = 200
+WIDTH = 500
+HEIGHT = 300
 
 score = 0
 gameOver = False
