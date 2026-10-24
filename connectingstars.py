@@ -77,4 +77,5 @@ def on_mouse_down(pos):
             next_star += 1
     else:
         create_stars()
+create_stars()
 pgzrun.go()
